@@ -21,14 +21,16 @@ namespace ToDoList.Logic.Data
             //初始化一个清单
             var tempDetailedList = new DetailedList
             {
+                ListId =1,
                 CreateTime = DateTime.Now,
-                ListNmae = "我的一天"             
+                ListName = "我的一天"             
             };
             //初始化一些事项
             List<Matter> someMatters = new List<Matter>()
           {
                 new Matter
                 {
+                    MatterId = 1,
                     CreateTime = DateTime.Now,
                     IsOverdue =false,
                     MatterContent="今晚去理发",
@@ -39,6 +41,7 @@ namespace ToDoList.Logic.Data
                 },
                  new Matter
                 {
+                     MatterId =2,
                     CreateTime = DateTime.Now,
                     IsOverdue =false,
                     MatterContent="今晚去吃老麻",

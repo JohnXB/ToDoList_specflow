@@ -6,6 +6,7 @@ namespace ToDoList.Logic.Model
 {
     public class Matter
     {
+        public int MatterId { get; set; }
         public string MatterContent { get; set; }
         public DateTime CreateTime { get; set; }
         public bool State { get; set; }
