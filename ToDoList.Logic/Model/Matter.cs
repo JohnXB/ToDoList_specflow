@@ -12,5 +12,6 @@ namespace ToDoList.Logic.Model
         public bool IsOverdue { get; set; }
         public string Remarks { get; set; }
         public DateTime OverdueTime { get; set; }
+        public DetailedList DetailedList { get; set; }
     }
 }
