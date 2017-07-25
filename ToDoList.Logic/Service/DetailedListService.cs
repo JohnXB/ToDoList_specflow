@@ -45,10 +45,8 @@ namespace ToDoList.Logic.Service
         /// </summary>
         /// <param name="清单编号"></param>
         /// <param name="事项内容"></param>
-        /// <param name="备注"></param>
-        /// <param name="过期事件"></param>
         /// <returns></returns>
-        public bool AddMatterToDetailedList(int listId,string matterContent,string remarks,DateTime overdueTime)
+        public bool AddMatterToDetailedList(int listId,string matterContent)
         {
             var list = _data.DetailedLists.SingleOrDefault(d => d.ListId == listId);
             if (list != null)
@@ -59,8 +57,6 @@ namespace ToDoList.Logic.Service
                     DetailedList = list,
                     IsOverdue = false,
                     MatterContent = matterContent,
-                    OverdueTime = overdueTime,
-                    Remarks = remarks,
                     State = false,
                     User = list.User
                 };
