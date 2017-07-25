@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoList.Logic.Model;
-namespace ToDoList.Logic.Data
+using ToDoList.Service.Model;
+namespace ToDoList.Service.Data
 {
     public class DataSource
     {
-        public List<User> Users { get; set; }
-        public List<DetailedList> DetailedLists { get; set; }
-        public List<Matter> Matters { get; set; }
+        public  List<User> Users { get; set; }
+        public  List<DetailedList> DetailedLists { get; set; }
+        public  List<Matter> Matters { get; set; }
         public DataSource()
         {
             //初始化一个用户
@@ -59,6 +59,7 @@ namespace ToDoList.Logic.Data
             tempUser.DetailedLists.Add(tempDetailedList);
             tempDetailedList.User = tempUser;
             //将事项添加给用户
+            tempUser.Matters = new List<Matter>();
             tempUser.Matters.AddRange(someMatters);
             //在所有初始化完成后加入到总的数据源中
             Users = new List<User>();
@@ -66,7 +67,7 @@ namespace ToDoList.Logic.Data
             Matters = new List<Matter>();
             Users.Add(tempUser);
             DetailedLists.Add(tempDetailedList);
-            Matters.AddRange(Matters);
+            Matters.AddRange(someMatters);
         }
     }
 }

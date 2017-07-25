@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoList.Logic.Data;
+using ToDoList.Service.Data;
 using System.Linq;
-using ToDoList.Logic.Model;
+using ToDoList.Service.Model;
 
-namespace ToDoList.Logic.Service
+namespace ToDoList.Service.Service
 {
     public class DetailedListService
     {
@@ -110,6 +110,19 @@ namespace ToDoList.Logic.Service
             else
             {
                 return false;
+            }
+        }
+
+        public List<DetailedList> GetUserDetailedList(int userId)
+        {
+            var user = _data.Users.SingleOrDefault(u => u.UserId == userId);
+            if (user != null)
+            {
+                return user.DetailedLists;
+            }
+            else
+            {
+                throw new Exception("用户编号有误");
             }
         }
     }

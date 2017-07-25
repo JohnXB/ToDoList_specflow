@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoList.Logic.Model
+namespace ToDoList.Service.Model
 {
      public  class DetailedList
     {

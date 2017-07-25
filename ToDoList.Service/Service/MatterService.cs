@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoList.Logic.Data;
+using ToDoList.Service.Data;
 using System.Linq;
-using ToDoList.Logic.Model;
+using ToDoList.Service.Model;
 
-namespace ToDoList.Logic.Service
+namespace ToDoList.Service.Service
 {
     public class MatterService
     {
