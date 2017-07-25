@@ -13,5 +13,6 @@ namespace ToDoList.Logic.Model
         public string Remarks { get; set; }
         public DateTime OverdueTime { get; set; }
         public DetailedList DetailedList { get; set; }
+        public User User { get; set; }
     }
 }
