@@ -49,6 +49,7 @@ namespace ToDoList.Service.Service
             var user = _data.Users.SingleOrDefault(u => u.UserId == userId&& u.Passwrod == password);
             if(user!= null)
             {
+                ProcessUserOverdueMatter(userId);
                 return true;
             }
             else
@@ -101,6 +102,26 @@ namespace ToDoList.Service.Service
             if(user!= null)
             {
                 return user.Matters.Where(m => m.IsOverdue == true).ToList();
+            }
+            else
+            {
+                throw new Exception("用户编号有误");
+            }
+        }
+        /// <summary>
+        /// 登录之后进行过期操作
+        /// </summary>
+        /// <param name="用户编号"></param>
+        private void  ProcessUserOverdueMatter(int userId)
+        {
+            var user = _data.Users.SingleOrDefault(u => u.UserId == userId);
+            if (user != null)
+            {
+                var result =  user.Matters.Where(m => m.IsOverdue == false&&m.OverdueTime <DateTime.Now).ToArray();
+                 for(int i= 0; i< result.Length; i++)
+                {
+                    result[i].IsOverdue = true;
+                }
             }
             else
             {

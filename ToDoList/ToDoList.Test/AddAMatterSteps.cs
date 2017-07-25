@@ -9,10 +9,10 @@ namespace ToDoList.Test
     [Binding]
     public class AddAMatterSteps
     {
-        bool singIn;
-        bool result;
-        int currentUserId;
-        int listId;
+        bool singIn;  //是否登陆成功
+        bool result; //是否添加成功
+        int currentUserId; //当前登陆用户编号
+        int listId; //获取到的清单列表
         UserService _userSerice = new UserService();
         DetailedListService _detailedListService = new DetailedListService();
         [Given(@"我首先用账号和密码登陆""(.*)""""(.*)""")]
